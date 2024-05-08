@@ -1,8 +1,9 @@
+import * as cdk from 'aws-cdk-lib';
 import {Construct} from 'constructs';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
-import * as cdk from 'aws-cdk-lib';
+
 
 export class EntrixOrdersStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -20,8 +21,7 @@ export class EntrixOrdersStack extends cdk.Stack {
             handler: 'post_lambda.lambda_handler',
             code: lambda.Code.fromAsset('lib/lambda/recordsService'),
             environment: {
-                DYNAMODB_TABLE_NAME: recordsTable.tableName,
-                LOGLEVEL: "INFO",
+                DYNAMODB_TABLE_NAME: recordsTable.tableName
             },
         });
         recordsTable.grantWriteData(postLambda)
@@ -58,5 +58,4 @@ export class EntrixOrdersStack extends cdk.Stack {
 
 
     }
-
 }

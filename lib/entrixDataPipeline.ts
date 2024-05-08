@@ -1,17 +1,18 @@
 import {Construct} from 'constructs';
-import * as lambda from 'aws-cdk-lib/aws-lambda';
+import {Duration} from 'aws-cdk-lib';
 import * as cdk from 'aws-cdk-lib';
+
+import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as tasks from 'aws-cdk-lib/aws-stepfunctions-tasks'
 import * as sfn from 'aws-cdk-lib/aws-stepfunctions'
 import * as s3 from 'aws-cdk-lib/aws-s3'
 import * as sns from 'aws-cdk-lib/aws-sns'
-import {Duration} from 'aws-cdk-lib';
+import * as events from 'aws-cdk-lib/aws-events';
+
 import {
     EventbridgeToStepfunctions,
     EventbridgeToStepfunctionsProps
 } from '@aws-solutions-constructs/aws-eventbridge-stepfunctions';
-import * as stepfunctions from 'aws-cdk-lib/aws-stepfunctions';
-import * as events from 'aws-cdk-lib/aws-events';
 
 export class EntrixDataPipelineStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
