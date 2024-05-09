@@ -7,10 +7,5 @@ import {EntrixCICDPipeline} from "../lib/entrixCICDPipeline";
 
 const app = new cdk.App();
 const envDev = {account: '830962405258', region: 'eu-west-1'}
-// new EntrixOrdersStack(app, 'EntrixOrders', {
-//     env: envDev
-// });
-// new EntrixDataPipelineStack(app, 'EntrixDataPipeline', {
-//     env: envDev
-// });
+
 new EntrixCICDPipeline(app, 'EntrixCICDPipeline', {env: envDev})

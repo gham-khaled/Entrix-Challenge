@@ -3,9 +3,13 @@ import {Construct} from 'constructs';
 import * as dynamodb from 'aws-cdk-lib/aws-dynamodb';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as apigateway from 'aws-cdk-lib/aws-apigateway';
+import {CfnOutput} from "aws-cdk-lib";
 
 
 export class EntrixOrdersStack extends cdk.Stack {
+
+    public readonly urlOutput: CfnOutput;
+
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
@@ -49,13 +53,17 @@ export class EntrixOrdersStack extends cdk.Stack {
                 },
             },
         });
-        api.root.addMethod('POST',  new apigateway.LambdaIntegration(postLambda), {
+        api.root.addMethod('POST', new apigateway.LambdaIntegration(postLambda), {
             requestValidator: requestValidator,
             requestModels: {
                 'application/json': recordsRequestModel,
             },
         });
 
+        // Output
+        this.urlOutput = new CfnOutput(this, 'Url', {
+            value: api.url,
+        });
 
     }
 }
