@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`matches the snapshot 1`] = `
+exports[`Snapshot Testing 1`] = `
 {
   "Mappings": {
     "ServiceprincipalMap": {
@@ -496,7 +496,7 @@ exports[`matches the snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "4a109e960b93f50cbf96e1910375a23e0e61e7c65f82c51f3e8d65675b259f81.zip",
+          "S3Key": "44622ce00c3c6b4fca5495ae4fb89a5878c0288cadc79326428ffb1f8cd7fd40.zip",
         },
         "Handler": "lambda_a.lambda_handler",
         "Role": {
@@ -550,7 +550,7 @@ exports[`matches the snapshot 1`] = `
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "4a109e960b93f50cbf96e1910375a23e0e61e7c65f82c51f3e8d65675b259f81.zip",
+          "S3Key": "44622ce00c3c6b4fca5495ae4fb89a5878c0288cadc79326428ffb1f8cd7fd40.zip",
         },
         "Environment": {
           "Variables": {
