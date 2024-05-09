@@ -10,7 +10,7 @@ export class EntrixPipelineAppStage extends cdk.Stage {
     constructor(scope: Construct, id: string, props?: cdk.StageProps) {
         super(scope, id, props);
         const entrixOrders = new EntrixOrdersStack(this, 'EntrixOrders');
-        new EntrixDataPipelineStack(this, 'EntrixOrders');
+        new EntrixDataPipelineStack(this, 'EntrixDataPipeline');
         this.urlOutput = entrixOrders.urlOutput;
 
     }
