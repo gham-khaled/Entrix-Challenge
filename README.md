@@ -19,7 +19,7 @@ service. The infrastructure includes three different Stacks:
 
 ## Prerequisites
 
-1. Install Node.js and `npm install --dev`.
+1. Install Node.js and `npm install --include=dev`.
 3. (For Lambda unit testing) Install Python 3.9 and run `pip install -r test/lambda_test/requirements.txt`.
 
 ## Infrastructure Components
@@ -34,7 +34,7 @@ service. The infrastructure includes three different Stacks:
 5. **EventBridge**: Schedules the data pipeline execution.
 6. **GitHub Actions Workflow**:
     - Automated deployment on merge to master branch.
-    - Runs tests for AWS CDK constructs.
+    - Run tests for AWS CDK constructs.
 
 ## Deployment Pipeline
 

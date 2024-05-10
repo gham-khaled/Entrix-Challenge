@@ -49,3 +49,10 @@ test('DynamoDB Billing mode is set to pay per request', () => {
         BillingMode: "PAY_PER_REQUEST"
     });
 });
+
+test("Snapshot Testing", () => {
+    const stack = new cdk.Stack();
+    const entrixOrdersStack = new EntrixOrdersStack(stack, 'EntrixOrdersStack');
+    const template = Template.fromStack(entrixOrdersStack);
+    expect(template.toJSON()).toMatchSnapshot();
+});

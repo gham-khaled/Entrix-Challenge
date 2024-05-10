@@ -57,10 +57,3 @@ test('Lambda Has Environment Variables', () => {
         }
     );
 });
-
-test("Snapshot Testing", () => {
-    const stack = new cdk.Stack();
-    const entrixDataPipelineStack = new EntrixDataPipelineStack(stack, 'EntrixDataPipeline');
-    const template = Template.fromStack(entrixDataPipelineStack);
-    expect(template.toJSON()).toMatchSnapshot();
-});
